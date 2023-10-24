@@ -1,0 +1,41 @@
+.containerNav {
+    background-color: #e43445;
+    color: black;
+    height: 120px;
+
+    nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .navLogo {
+            height: 100px;
+            margin-left: 50px;
+
+            .logo {
+                width: auto;
+                height: 100%;
+            }
+        }
+
+        ul {
+            font-size: x-large;
+            height: 120px;
+            margin: 0;
+            text-align: center;
+            display: flex;
+            align-items: center;
+
+            li {
+                list-style: none;
+                padding-right: 30px;
+
+                a {
+                    color: #faecee;
+                    text-decoration: none;
+                    display: block;
+                }
+            }
+        }
+    }
+}

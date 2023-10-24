@@ -1,4 +1,21 @@
-#root {
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #fbf4dd;
+  font-family: 'Work Sans', sans-serif;
+
+  .main {
+      min-height: 70vh;
+  }
+}
+
+
+
+
+/* #root {
   max-width: 1280px;
   margin: 0 auto;
   padding: 2rem;
@@ -40,3 +57,4 @@
 .read-the-docs {
   color: #888;
 }
+*/

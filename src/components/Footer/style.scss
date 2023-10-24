@@ -1,0 +1,16 @@
+.footerContainer {
+    font-size: larger;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 300px;
+    background: url(https://i.ibb.co/SVBdQ1V/fondo-2.jpg) center center;
+    background-size: cover;
+    color: #faecee;
+    line-height: 25px;
+
+    a{
+        text-decoration: none;
+        color: #faecee;
+    }
+}
