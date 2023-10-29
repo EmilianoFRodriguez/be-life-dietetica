@@ -1,0 +1,61 @@
+.productsContainer {
+    background: url(https://i.ibb.co/QY7xKRX/fondo-1.jpg) repeat center center;
+
+
+
+    .titleContainer {
+        height: 150px;
+        display: grid;
+        place-items: center;
+
+        h2 {
+            height: 50px;
+        }
+
+    }
+
+
+    .itemListContainer {
+        ul {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            list-style: none;
+
+            li {
+                width: 250px;
+                padding: 10px 15px;
+                background-size: cover;
+                box-shadow: 0px 5px 10px #ececed;
+                background-color: #ffffff;
+                text-align: center;
+                margin: 10px 15px;
+                border-radius: 10px;
+                transition: all ease-in-out 0.2s;
+
+                .imgContainer {
+                    height: 200px;
+                    width: 200px;
+                    margin: auto;
+
+                    img {
+                        height: 200px;
+                        width: 200px;
+                        object-fit: contain;
+                    }
+                }
+            }
+
+            li:hover {
+                box-shadow: 0px 6px 5px grey;
+                transform: translateY(-5px) translateX(-5px);
+            }
+
+            .buttonDetail:hover {
+                cursor: pointer;
+
+            }
+
+        }
+    }
+}
