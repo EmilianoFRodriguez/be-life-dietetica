@@ -1,6 +1,7 @@
 import React from "react";
-import './style.scss'
+import './style.scss';
 import useFetch from "../../assets/UseFetch";
+import { Link } from "react-router-dom";
 
 export default function ItemListContainer() {
     const { dataApi, loading, error } = useFetch('https://64092b346ecd4f9e18a9f4d5.mockapi.io/api/v1/products')
@@ -21,9 +22,9 @@ export default function ItemListContainer() {
                             </div>
                             <p>{producto.name}</p>
                             <p>{`$${producto.price}`}</p>
-                            <a href="#" className="button">
+                            <Link to={`/detalle/${producto.id}`} className="button">
                                 <button className='buttonDetal'>Detalle</button>
-                            </a>
+                            </Link>
                         </li>
                     ))}
                 </ul>

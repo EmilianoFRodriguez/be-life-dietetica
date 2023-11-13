@@ -1,6 +1,7 @@
-import React from 'react'
-import './style.scss'
-import CartWidget from '../CartWidget'
+import React from 'react';
+import { Link } from 'react-router-dom';
+import './style.scss';
+import CartWidget from '../CartWidget';
 
 export default function NavBar() {
 
@@ -8,36 +9,36 @@ export default function NavBar() {
         <div className="containerNav">
             <nav className="navBar">
                 <div className="navLogo">
-                    <a href="#" className="linkLogo">
+                    <Link to="/" className="linkLogo">
                         <img
                             src="https://i.ibb.co/f0Hx03n/be-life-logo.jpg" alt="Logo-BeLife" className='logo'
                         />
-                    </a>
+                    </Link>
                 </div>
                 <ul className="navList">
                     <li className="navItem">
-                        <a href="#" className="">Inicio</a>
+                        <Link to="/" className="">Inicio</Link>
                     </li>
                     <li className="navItem">
-                        <a href="#" className="">Productos</a>
+                        <Link to="/productos" className="">Productos</Link>
                     </li>
                     <li className="navItem">
-                        <a href="#" className="">Sin TACC</a>
+                        <Link to="/sintacc" className="">Sin TACC</Link>
                     </li>
                     <li className="navItem">
-                        <a href="#" className="">Veggies</a>
+                        <Link to="/veggies" className="">Veggies</Link>
                     </li>
                     <li className="navItem">
-                        <a href="#" className="">Suplementos</a>
+                        <Link to="/suplementos" className="">Suplementos</Link>
                     </li>
                     <li className="navItem">
-                        <a href="#" className="">Quienes Somos</a>
+                        <Link to="/quienessomos" className="">Quienes Somos</Link>
                     </li>
                     <li className="navItem">
-                        <a href="#" className="">Contacto</a>
+                        <Link to="/contacto" className="">Contacto</Link>
                     </li>
                 </ul>
-                <a href="#"><CartWidget /></a>
+                <Link to="/cart"><CartWidget /></Link>
             </nav>
         </div>)
 }

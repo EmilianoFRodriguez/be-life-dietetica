@@ -1,0 +1,54 @@
+.itemDetailContainer {
+    ul {
+        display: grid;
+        place-items: center;
+        list-style: none;
+
+        li {
+            min-width: 600px;
+            height: 400px;
+            padding: 10px 15px;
+            background: url(https://i.ibb.co/QY7xKRX/fondo-1.jpg) no-repeat center center;
+            background-size: cover;
+            box-shadow: 0px 5px 10px #ececed;
+            text-align: center;
+            margin: 10px 15px;
+            border-radius: 10px;
+            transition: all ease-in-out 0.2s;
+            display: flex;
+
+            .imgContainer {
+                height: 350px;
+                width: 350px;
+                margin: auto;
+                border: solid 1px black;
+
+                img {
+                    height: 350px;
+                    width: 350px;
+                    object-fit: contain;
+                }
+            }
+
+            .dataContainer {
+                display: grid;
+                place-items: center;
+
+                .detailContainer {
+                    display: grid;
+                    place-items: center;
+                    height: 200px;
+                    width: 200px;
+                    margin: auto;
+                    border: solid 1px black;
+                }
+            }
+        }
+
+        img:hover {
+            box-shadow: 0px 6px 5px #dedede;
+            transform: scale(1.02);
+        }
+
+    }
+}

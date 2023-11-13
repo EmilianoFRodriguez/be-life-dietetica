@@ -1,0 +1,48 @@
+.quienesContainer{
+    min-height: 70vh;
+    padding-top: 50px;
+    background: url(https://i.ibb.co/6wkLxcm/be-life7.jpg) no-repeat center center;
+    background-size: cover;
+    color: whitesmoke;
+    .title {
+        height: 50px;
+        display: grid;
+        place-items: center;
+        margin-bottom: 15px;
+        h3{
+            font-size: 25px;
+            padding: 15px;
+            border-radius: 15px;
+            background-color: rgba(0, 0, 0, 0.625);
+        }
+    }
+    .text {
+        width: 60%;
+        height: 250px;
+        margin: auto;
+        display: grid;
+        place-items: center;
+        p{
+            font-size: 20px;
+            padding: 15px;
+            border-radius: 15px;
+            background-color: rgba(0, 0, 0, 0.625);
+            text-align: center;
+        }
+    }
+    .slogan{
+        height: 100px;
+        width: 60%;
+        margin: 15px auto 15px auto;
+        display: grid;
+        place-items: center;
+        p{
+            font-size: 18px;
+            padding: 15px;
+            margin-bottom: 10px;
+            border-radius: 15px;
+            background-color: rgba(0, 0, 0, 0.652);
+            text-align: center;
+        }
+    }
+}
