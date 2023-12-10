@@ -23,13 +23,13 @@ export default function NavBar() {
                         <Link to="/productos" className="">Productos</Link>
                     </li>
                     <li className="navItem">
-                        <Link to="/sintacc" className="">Sin TACC</Link>
+                        <Link to="/category/sintacc" className="">Sin TACC</Link>
                     </li>
                     <li className="navItem">
-                        <Link to="/veggies" className="">Veggies</Link>
+                        <Link to="/category/veggie" className="">Veggies</Link>
                     </li>
                     <li className="navItem">
-                        <Link to="/suplementos" className="">Suplementos</Link>
+                        <Link to="/category/suplementos" className="">Suplementos</Link>
                     </li>
                     <li className="navItem">
                         <Link to="/quienessomos" className="">Quienes Somos</Link>

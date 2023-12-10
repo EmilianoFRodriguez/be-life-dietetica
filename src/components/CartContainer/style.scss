@@ -1,0 +1,25 @@
+.cartList {
+    border-spacing: 0;
+    // border-radius: 10px;
+    width: 75%;
+    margin: 20px auto;
+    text-align: center;
+    box-shadow: 0px 0px 20px #ff000085;
+
+    .cartList_head {
+        background-color: #edd7bc;
+        margin: 10px auto;
+        border-radius: 10px;
+    }
+    
+    .cartList_row {
+        line-height: 50px;
+    }
+}
+
+.cartListDetail {
+    color: gray;
+    text-align: center;
+    line-height: 50px;
+    width: 100%;
+}

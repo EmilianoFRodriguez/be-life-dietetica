@@ -1,31 +1,40 @@
-import React, { useEffect, useState } from "react";
 import './style.scss';
+import React, { useEffect, useState, useContext } from "react";
 import { useParams } from "react-router-dom";
+import getSingleItemFromDatabase from "../../firebase/firestoreGetSingle";
+import ItemCountDetail from '../ItemCount';
+import cartContext from '../../context/cartContext';
 
 export default function ItemDetailContainer() {
-    const [ product, setProduct ] = useState([])
+    const [product, setProduct] = useState([]);
+    const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
-    const { idProduct } = useParams()
+    const params = useParams();
+    const idProduct = params.idProduct;
 
-    useEffect(()=>{
-        const fetchData = ()=> {
-            return fetch('https://64092b346ecd4f9e18a9f4d5.mockapi.io/api/v1/products')
-            .then((response)=>response.json())
-            .then((data)=> {
-                const foundProduct = data.find((item)=> item.id == idProduct)
-                setProduct(foundProduct)
-            })
-            .catch((error)=>setError(error))
-        }
-        fetchData()
-    },[idProduct])
+    const [quantity, setQuantity] = useState(0);
+    const { cart, addToCart } = useContext(cartContext);
+
+    useEffect(() => {
+        getSingleItemFromDatabase(idProduct)
+            .then((productSingle) => { setProduct(productSingle) })
+            .catch((error) => setError(error))
+            .finally(() => setLoading(false));
+
+    }, []);
+
+    function onAdd(q) {
+        setQuantity(q)
+        addToCart(product, q)
+    }
 
     const unity = (product.unity > 15) ? `${product.unit} grs.` : `${product.unit} Unidades.`;
 
     return (
         <div className='itemDetailContainer'>
             <ul className='itemDetail'>
-                {error && <h3>ERROR 404</h3>}
+                {loading && <h3>Cargando . . .</h3>}
+                {error && alert(error)}
                 {<li key={product.id}>
                     <div className='imgContainer'>
                         <img src={product.img} alt={product.name} />
@@ -37,9 +46,10 @@ export default function ItemDetailContainer() {
                             <p>{product.category}</p>
                             <p>{`$${product.price}`}</p>
                         </div>
+                        <ItemCountDetail initial={1} stock={product.stock} onAdd={onAdd} />
                     </div>
                 </li>}
             </ul>
         </div>
     )
-};
+}
