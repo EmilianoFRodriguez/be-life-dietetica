@@ -26,6 +26,7 @@ export function CartContextProvider({ children }) {
         if (isInCart(item.id)) {
             let index = cart.findIndex((itemInCart) => itemInCart.id === item.id);
             newCart[index].quantity = newCart[index].quantity + 1;
+            console.log(newCart[index].quantity);
         }
         setCart([...newCart]);
     };
@@ -37,15 +38,13 @@ export function CartContextProvider({ children }) {
             let index = cart.findIndex((itemInCart) => itemInCart.id === item.id);
             if (newCart[index].quantity > 1) {
                 newCart[index].quantity = newCart[index].quantity - 1;
+                console.log(newCart[index].quantity);
             }
         }
         setCart([...newCart]);
     }
 
-    function isInCart(id) {
-        return cart.some((item) => item.id === id)
-    }
-
+    
     function removeItem(item) {
         const newCart = JSON.parse(JSON.stringify(cart));
         if (isInCart(item.id)) {
@@ -73,6 +72,9 @@ export function CartContextProvider({ children }) {
 
     }
 
+    function isInCart(id) {
+        return cart.some((item) => item.id === id)
+    }
 
     return (
         <Provider value={{ cart, setCart, addToCart, addItem, delItem, isInCart, removeItem, getTotalPrice, getTotalItems, clearCart }}>

@@ -32,6 +32,36 @@ export default function ItemCountDetail({ initial, stock, onAdd }) {
     )
 }
 
+// export  function ItemCountCart({ quantity, stock }) {
+//     const [count, setCount] = useState(quantity)
+
+//     function increment() {
+//         if (count < stock) {
+//             setCount(count + 1)
+//         }
+//     };
+
+//     function decrement() {
+//         if (count > 1) {
+//             setCount(count - 1)
+//         }
+//     };
+
+//     console.log(quantity);
+
+//     return (
+//         <div className="counterControl">
+//             <Button color="red" onTouchButton={() => decrement()}>-</Button>
+//             {count}
+//             <Button color="green" onTouchButton={() => increment()}>+</Button>
+//         </div>
+//     )
+// }
+
+
+
+
+
 export function ButtonRemoveItem({ removeItemFromCart }) {
 
     return (

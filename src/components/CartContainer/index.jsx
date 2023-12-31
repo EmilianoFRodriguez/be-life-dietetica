@@ -8,6 +8,13 @@ export default function CartContainer() {
 
     const { cart, addItem, delItem, removeItem, getTotalPrice } = useContext(cartContext)
 
+    function addItemToCart(product) {
+        addItem(product);
+    };
+    function deItemToCart(product) {
+        delItem(product);
+    };
+
     return (
         <div className="tableContainer">
             <table className="cartList">
@@ -32,9 +39,9 @@ export default function CartContainer() {
                                 <td>$ {product.price}</td>
                                 <td>
                                     <div className="counterControl">
-                                        <Button color="red" onTouchButton={() => delItem(product)}>-</Button>
+                                        <Button color="red" onTouchButton={() => deItemToCart(product)}>-</Button>
                                         {product.quantity}
-                                        <Button color="green" onTouchButton={() => addItem(product)}>+</Button>
+                                        <Button color="green" onTouchButton={() => addItemToCart(product)}>+</Button> 
                                     </div>
                                 </td>
                                 <td>
@@ -53,5 +60,4 @@ export default function CartContainer() {
             </div>
         </div>
     );
-
 }
